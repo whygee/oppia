@@ -30,7 +30,7 @@ class HomePageTest(test_utils.GenericTestBase):
         response = self.testapp.get('/')
         self.assertEqual(response.status_int, 200)
         response.mustcontain(
-            'Your personal tutor',
+            'Your personal chef',
             'Oppia - Gallery', 'About', 'Login', no=['Logout'])
 
     def test_notifications_dashboard_redirects_for_logged_out_users(self):
