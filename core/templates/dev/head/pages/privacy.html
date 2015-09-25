@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block subtitle %}
+  Privacy Policy
+{% endblock subtitle %}
+
+{% block header_js %}
+  {{ super() }}
+
+  <style>
+    html, body {
+      background-color: #eee;
+    }
+  </style>
+{% endblock %}
+
+{% block navbar_breadcrumb %}
+  <ul class="nav navbar-nav oppia-navbar-breadcrumb">
+    <li>
+      <span class="oppia-navbar-breadcrumb-separator"></span>
+      Privacy
+    </li>
+  </ul>
+{% endblock navbar_breadcrumb %}
+
+{% block content %}
+  <div class="oppia-page-cards-container">
+    <md-card class="oppia-page-card oppia-long-text">
+
+      <a class="oppia-about-anchor" name="our-mission"></a>
+      <h3>This is a Placeholder Page</h3>
+
+      <p>
+        This page will be modified to become a privacy policy.
+      </p>
+
+      <a class="oppia-about-anchor" name="license"></a>
+      <h3>License</h3>
+
+      <p>
+        All content in Oppia's explorations is licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0</a>
+        with a waiver of the attribution requirement (specifically, Sections 3(a)(1) and 3(a)(2)).
+        If you reuse content from this site, we encourage you to include a link to the
+        relevant exploration page, but do not require it.
+      </p>
+      <p>
+        The software powering Oppia is open source, and its
+        <a href="https://github.com/oppia/oppia/">code</a> is released under an
+        <a href="https://www.apache.org/licenses/">Apache 2.0</a> license.
+      </p>
+    </md-card>
+  </div>
+
+  <div class="nav oppia-about-right-menu hidden-sm hidden-xs">
+    <strong>Privacy Policy</strong>
+    <p><a href="#meet-oppia">Section 1</a></p>
+    <p><a href="#contact">Section 2</a></p>
+    <p><a href="#license">Section 3</a></p>
+    <p><a href="#credits">Section 4</a></p>
+  </div>
+
+  <script>
+    // This scrolls the page to the anchor clicked on in the quick links menu.
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')) {
+        var target = $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  </script>
+{% endblock %}

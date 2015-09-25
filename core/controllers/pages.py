@@ -107,3 +107,19 @@ class ForumPage(base.BaseHandler):
             'on_localhost': netloc.startswith('localhost'),
         })
         self.render_template('pages/forum.html')
+
+
+class TermsPage(base.BaseHandler):
+    """Page with terms and conditions."""
+
+    def get(self):
+        """Handles GET requests."""
+        self.render_template('pages/terms.html')
+
+
+class PrivacyPage(base.BaseHandler):
+    """Page with privacy policy."""
+
+    def get(self):
+        """Handles GET requests."""
+        self.render_template('pages/privacy.html')
